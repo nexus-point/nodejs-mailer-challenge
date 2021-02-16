@@ -85,33 +85,38 @@ manual testing with postman
 
 ![manual testing with postman](postman-send.png)
 
-run mocha unit test suite
+automated test suite with mocha
 
 command: `npm test`
 
 ```
   MailGunSender
-    √ statusCode should = 200
+Mailgun Magnificent API
+    √ sent should = true (917ms)
 
   SendGridSender
-    √ statusCode should = 202
+    √ sent should = true (1257ms)
 
 
-  2 passing (24ms)
+  2 passing (2s)
 ```
-report code coverage
+
+code coverage report with instambul nyc.
 
 command: `npm run coverage`
 
 ```
--------------------|---------|----------|---------|---------|-------------------
-File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
--------------------|---------|----------|---------|---------|-------------------
-All files          |   91.18 |      100 |   76.92 |   91.18 |
- MailGunSender.ts  |   93.33 |      100 |   83.33 |   93.33 | 40
- SendGridSender.ts |   86.67 |      100 |   66.67 |   86.67 | 34,43
- SenderAbstract.ts |     100 |      100 |     100 |     100 |
--------------------|---------|----------|---------|---------|-------------------
+--------------------|---------|----------|---------|---------|-------------------
+File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+--------------------|---------|----------|---------|---------|-------------------
+All files           |   94.29 |       80 |   88.89 |   94.29 |
+ model              |     100 |      100 |     100 |     100 |
+  message.ts        |     100 |      100 |     100 |     100 |
+ services           |   93.55 |       80 |   88.89 |   93.55 |
+  MailGunSender.ts  |     100 |      100 |     100 |     100 |
+  SendGridSender.ts |     100 |      100 |     100 |     100 |
+  SenderAbstract.ts |   90.48 |       80 |   85.71 |   90.48 | 39,45
+--------------------|---------|----------|---------|---------|-------------------
 ```
 
 ## ideas for improvement
@@ -121,8 +126,4 @@ All files          |   91.18 |      100 |   76.92 |   91.18 |
 3. mock testing using sion
 4. test fall back scenario
 5. log to a dynamodb table or cloudwatch
-
-## issues
-
-1. the trail account for MailGun doesn't appear to send through the email despite having a status code 200 returned from the api.
-2. there is a `mailgun-js` package that might overcome the issue of emails not sending through, however the requirements said not to use them.
+6. more unit testing for full coverage
