@@ -1,0 +1,13 @@
+node_modules
+
+dist/**/*
+
+package-lock.json
+
+.idea
+
+.env
+
+.serverless
+
+.nyc_output

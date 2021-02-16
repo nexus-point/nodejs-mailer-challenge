@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "prettier",
+        "airbnb-base",
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended",
+        "plugin:mocha/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "prettier",
+        "mocha"
+    ],
+    "rules": {
+        "no-console": "off",
+        "prettier/prettier": "error",
+        "import/extensions": 0,
+        "import/no-unresolved": 0,
+        "mocha/no-skipped-tests": "error",
+        "mocha/no-exclusive-tests": "error",
+        "no-restricted-syntax": 0,
+        "no-loop-func": 0
+    }
+}

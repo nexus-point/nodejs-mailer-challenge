@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "e710c755-e91d-41b0-99b0-7825522e9452",
+		"name": "main",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}",
+					"host": [
+						"{{host}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recipientName\": \"nexus\",\r\n    \"recipientEmail\": \"contact+challenge@xxxxxx\",\r\n    \"subject\": \"hello\",\r\n    \"messageText\": \"This is a test message\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/send",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"send"
+					]
+				},
+				"description": "send email message"
+			},
+			"response": []
+		}
+	]
+}
