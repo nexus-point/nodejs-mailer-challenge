@@ -6,7 +6,7 @@
   "scripts": {
     "tsc": "tsc",
     "prestart": "npm run tsc",
-    "start": "node --trace-warnings dist/app.js",
+    "start": "node dist/app.js",
     "build:watch": "npm run tsc -- --watch",
     "start:dev": "nodemon dist/app.js",
     "start:dev:watch": "npm-run-all tsc --parallel start:dev build:watch",
