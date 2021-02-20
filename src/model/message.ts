@@ -15,6 +15,7 @@ const MessageSchema = new Schema({
   recipientEmail: {
     type: String,
     required: [true, 'Recipient email is required'],
+    validate: /^([\w-+\.]+@([\w-]+\.)+[\w-]{2,4})?$/
   },
   subject: { type: String, required: [true, 'Subject is required'] },
   messageText: { type: String, required: [true, 'Message Text is required'] },
